@@ -71,7 +71,7 @@ class VidCutter(QWidget):
         QFontDatabase.addApplicationFont(':/fonts/DroidSansMono.ttf')
         QFontDatabase.addApplicationFont(':/fonts/OpenSans.ttf')
 
-        MainWindow.load_stylesheet(':/styles/vidcutter.qss')
+        MainWindow.load_stylesheet('styles/vidcutter.qss')
 
         fontSize = 12 if sys.platform == 'darwin' else 10
         qApp.setFont(QFont('Open Sans', fontSize, 300))
@@ -146,9 +146,9 @@ class VidCutter(QWidget):
 
         self.menuButton = QPushButton(icon=self.menuIcon, flat=True, toolTip='Menu',
                                       statusTip='Media + application information',
-                                      iconSize=QSize(28, 28), cursor=Qt.PointingHandCursor)
+                                      objectName='menuButton', iconSize=QSize(26, 26),
+                                      cursor=Qt.PointingHandCursor)
         self.menuButton.setMenu(self.appMenu)
-        self.appMenu
 
         toolbarLayout = QHBoxLayout()
         toolbarLayout.addWidget(self.toolbar)
@@ -263,6 +263,10 @@ class VidCutter(QWidget):
         self.toolbar.addAction(self.cutStartAction)
         self.toolbar.addAction(self.cutEndAction)
         self.toolbar.addAction(self.saveAction)
+
+        button_open = self.toolbar.widgetForAction(self.openAction)
+        print(type(button_open))
+
 
     def initMenus(self) -> None:
         self.appMenu.addAction(self.mediaInfoAction)

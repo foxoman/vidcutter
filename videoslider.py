@@ -130,7 +130,4 @@ QSlider::handle:horizontal {
     width: 20px;
     height: 58px;
     margin: -16px -10px;
-}
-QSlider::handle:hover {
-    background: purple;
 }''' % (bground, margin)

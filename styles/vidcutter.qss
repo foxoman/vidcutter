@@ -18,7 +18,7 @@ QToolBar QToolButton {
     color: #444;
 }
 
-QToolBar QToolButton:hover {
+QToolBar QToolButton:hover, QToolBar QToolButton:selected {
     border: 1px inset #6A4572;
     color: #6A4572;
     background-color: rgba(255, 255, 255, 0.85);
@@ -37,8 +37,10 @@ QToolBar QToolButton:disabled { color: #999; }
 QPushButton::menu-indicator  {
     subcontrol-origin: padding;
     subcontrol-position: right;
-    left: 6px;
+    left: 2px;
 }
+
+/*QPushButton#menuButton*/
 
 /* -------------------------------------------------------------------------- */
 
